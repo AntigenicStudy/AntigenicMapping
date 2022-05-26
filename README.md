@@ -10,18 +10,18 @@ To train the sequence processing model for each type of influenza, we retrieve l
 To train ResNet-18 for each influenza subtype/lineage, we collect representative viruses of the same subtype/lineage with both HI measurements and full-length HA sequences
 
 ### HA sequence-based embedding distance
-Please download embedding distance data from https://drive.google.com/drive/folders/1vQhz0SYSHiWYtGX0lGxcBH-btTNGB8rm?usp=sharing
+Please download HA sequence-based embedding distance between each pair of representative viruses from https://drive.google.com/drive/folders/1vQhz0SYSHiWYtGX0lGxcBH-btTNGB8rm?usp=sharing
 
 ### Antigenic distance 
-Please find pairwise antigenic distances for each subtype/lineage in data/distance/
+Please find the antigenic distance between each pair of representative viruses for each influenza subtype/lineage in data/distance/
 
 ## Pretrained models
 
-### BiLSTM
-Please find pre-trained BiLSTM in models/trained_sequence_models for each influenza type.
+### Sequence processing model built with BiLSTM
+Please find pre-trained BiLSTM in this [folder](/models/trained_sequence_models) for each influenza type.
 
 ### ResNet-18
-Please find pre-trained ResNet-18 for each influenza subtype/lineage in models/trained_regression_models
+Please find our trained ResNet-18 for each influenza subtype/lineage in this [folder](/models/trained_regression_models) 
 
 ## Usage
 
