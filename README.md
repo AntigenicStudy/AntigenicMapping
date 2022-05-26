@@ -9,7 +9,7 @@ To train the sequence processing model for each type of influenza, we retrieve l
 ### Representative viruses for training ResNet
 To train ResNet-18 for each influenza subtype/lineage, we collect representative viruses of the same subtype/lineage with both HI measurements and full-length HA sequences
 
-### Embedding distance
+### HA sequence-based embedding distance
 Please download embedding distance data from https://drive.google.com/drive/folders/1vQhz0SYSHiWYtGX0lGxcBH-btTNGB8rm?usp=sharing
 
 ### Antigenic distance 
