@@ -35,7 +35,7 @@ python code/calculateProtEmbedding.py
 
 ### Calculate embedding distance
 ```
-python code/semanticChange.py 'data/matrix' 'embed_dis/h1-pairwise.txt'
+python code/embeddingDistance.py 'data/matrix' 'embed_dis/h1-pairwise.txt'
 ```
 
 ### Translate embedding distance into antigenic distance 
