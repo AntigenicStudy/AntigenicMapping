@@ -3,8 +3,11 @@ We develop a two-stage deep learning based framework to predict the antigenic di
 
 ## Data
 
-### Amino acid sequence of HA protein
-We collect amino acid sequences to train sequence processing model and regression neural network. Please find them in data/AAsequence/.
+### Amino acid sequences of influenza HA protein
+To train the sequence processing model for each type of influenza, we retrieve large-volume amino acid sequences of HA protein from that type of influenza from GISAID.
+
+### Representative viruses for training ResNet
+To train ResNet-18 for each influenza subtype/lineage, we collect representative viruses of the same subtype/lineage with both HI measurements and full-length HA sequences
 
 ### Embedding distance
 Please download embedding distance data from https://drive.google.com/drive/folders/1vQhz0SYSHiWYtGX0lGxcBH-btTNGB8rm?usp=sharing
@@ -20,7 +23,7 @@ Please find pre-trained BiLSTM in models/trained_sequence_models for each influe
 ### ResNet-18
 Please find pre-trained ResNet-18 for each influenza subtype/lineage in models/trained_regression_models
 
-## Uesage
+## Usage
 
 ### Embedding HA protein
 ```
