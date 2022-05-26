@@ -24,10 +24,13 @@ Please find pre-trained BiLSTM in this [folder](/models/trained_sequence_models)
 Please find our trained ResNet-18 for each influenza subtype/lineage in this [folder](/models/trained_regression_models) 
 
 ## Usage
-
+### Train BiLSTM
+```
+python code/trainBiLSTM.py 
+```
 ### Embedding HA protein
 ```
-python code/sequenceProcessing.py 
+python code/calculateProtEmbedding.py 
 ```
 
 ### Calculate embedding distance
