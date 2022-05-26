@@ -27,7 +27,7 @@ Please find our trained ResNet-18 for each influenza subtype/lineage in this [fo
 
 ### Embedding HA protein
 ```
-python code/flu.py 
+python code/sequenceProcessing.py 
 ```
 
 ### Calculate embedding distance
