@@ -13,7 +13,7 @@ To train ResNet-18 for each influenza subtype/lineage, we collect representative
 Please download HA sequence-based embedding distance between each pair of representative viruses from https://drive.google.com/drive/folders/1vQhz0SYSHiWYtGX0lGxcBH-btTNGB8rm?usp=sharing
 
 ### Antigenic distance 
-Please find the antigenic distance between each pair of representative viruses for each influenza subtype/lineage in data/distance/
+Please find the antigenic distance between each pair of representative viruses for each influenza subtype/lineage in this [folder](data/distance/)
 
 ## Pretrained models
 
