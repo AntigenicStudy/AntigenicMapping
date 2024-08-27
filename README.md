@@ -53,6 +53,4 @@ python code/regression.py 'data/distance' 'h1-dis.txt' 'data/embedding' 'h1_pair
 python code/visualization.py 'pred-output' 'y-pred-test.txt' 'y-gt-test.txt' 'y-pred-train.txt' 'y-gt-train.txt' 'losses-h1.txt' 'visual-output' 'test-h1n1.png' 'train-h1n1.png'
 ```
 
-![Image text](https://github.com/AntigenicStudy/AntigenicMapping/blob/main/img/pipeline.PNG)
-![Image text](https://github.com/AntigenicStudy/AntigenicMapping/blob/main/img/train-h1.png)
-![Image text](https://github.com/AntigenicStudy/AntigenicMapping/blob/main/img/test-h1.png)
+![Image text](https://github.com/AntigenicStudy/AntigenicMapping/blob/main/img/Fig1_ABCD.jpg)
