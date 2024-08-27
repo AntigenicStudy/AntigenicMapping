@@ -53,4 +53,11 @@ python code/regression.py 'data/distance' 'h1-dis.txt' 'data/embedding' 'h1_pair
 python code/visualization.py 'pred-output' 'y-pred-test.txt' 'y-gt-test.txt' 'y-pred-train.txt' 'y-gt-train.txt' 'losses-h1.txt' 'visual-output' 'test-h1n1.png' 'train-h1n1.png'
 ```
 
+### Schematic of the model components for predicting antigenic change of H3N2 virus in each season.
+
 ![Image text](https://github.com/AntigenicStudy/AntigenicMapping/blob/main/img/Fig1_ABCD.jpg)
+
+(A) BiLSTM-based protein language model was trained with 83,145 HA sequences of H3N2 viruses for high-dimensional encoding of genetic sequences. (B) Antigenic map provides a robust summary of the raw titre data, with antigenic drift of influenza virus interpreted as the movements of new strains in antigenic space. In the map, antigenic distance between two viruses represents their antigenic dissimilarity. (C) Multilayer perceptron (MLP) was trained using antigenic distance and sequence data of the mapped viruses from the past seasons to translate sequence-based embedding distance to antigenic distance. (D) Prediction of the antigenic distance between each new virus and each other virus was done by applying the trained MLP to their HA sequences. The viruses in each new season were then placed onto the antigenic map using multidimensional scaling (MDS) with input data of predicted and pre-existing antigenic distances.
+
+
+
