@@ -15,7 +15,9 @@ Please download HA sequence-based embedding distance between each pair of repres
 ### Antigenic distance 
 Please find the antigenic distance between each pair of representative H3 viruses in this [folder](data/distance/)
 
-## Environment
+## System requirements
+The major Python package requirements and their tested versions are in [file](requirements.txt)
+Our experiments were run with Python version 3.9 on Ubuntu 20.04.1.
 
 
 ## Pretrained models
