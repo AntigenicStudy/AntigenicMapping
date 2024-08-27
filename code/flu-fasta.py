@@ -1,3 +1,5 @@
+#embedding the protein sequences into high dimensional vectors using the trained BiLSTM.
+
 from mutation import *
 import time
 np.random.seed(1)
