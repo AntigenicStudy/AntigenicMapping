@@ -11,11 +11,12 @@ pip is the recommended installer for this environment.
 ## Demo
 ### Train BiLSTM
 ```
-python code/flu-fasta.py 
+python code/flu-fasta.py examples/example_flu.fa aligned/h3-train.fa --checkpoint models/flu-h3.hdf5
 ```
 ### Embedding HA protein
+To calculate the embedding of a protein, please run this script given the example sequence, input fasta file and the trained BiLSTM model.
 ```
-python code/calculateProtEmbedding.py 
+python code/flu-fasta.py examples/example_flu.fa aligned/h3-train.fa --checkpoint models/flu-h3.hdf5
 ```
 
 ### Calculate embedding distance
