@@ -15,6 +15,8 @@ Please download HA sequence-based embedding distance between each pair of repres
 ### Antigenic distance 
 Please find the antigenic distance between each pair of representative viruses for each influenza subtype/lineage in this [folder](data/distance/)
 
+## Environment
+
 ## Pretrained models
 
 ### Sequence processing model built with BiLSTM
