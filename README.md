@@ -8,28 +8,6 @@ Our experiments were run with Python version 3.9 on Ubuntu 20.04.1.
 ## Installation guide
 pip is the recommended installer for this environment.  
 
-## Data
-
-### Amino acid sequences of influenza HA protein
-To train the sequence processing model for each type of influenza, we retrieve more than 80,000 amino acid sequences of HA protein from H3 influenza from GISAID.
-
-### Representative viruses for training ResNet
-To train MLP for regression, we collect 279 representative H3 viruses with both HI measurements and full-length HA sequences
-
-### HA sequence-based embedding distance
-Please download HA sequence-based embedding distance between each pair of representative viruses from https://drive.google.com/drive/folders/1vQhz0SYSHiWYtGX0lGxcBH-btTNGB8rm?usp=sharing
-
-### Antigenic distance 
-Please find the antigenic distance between each pair of representative H3 viruses in this [folder](data/distance/)
-
-## Pretrained models
-
-### Sequence processing model built with BiLSTM
-Please find pre-trained BiLSTM in this [folder](/models/trained_sequence_models) for each influenza type.
-
-### ResNet-18
-Please find our trained ResNet-18 for each influenza subtype/lineage in this [folder](/models/trained_regression_models) 
-
 ## Usage
 ### Train BiLSTM
 ```
@@ -54,6 +32,29 @@ python code/regression.py 'data/distance' 'h1-dis.txt' 'data/embedding' 'h1_pair
 ```
 python code/visualization.py 'pred-output' 'y-pred-test.txt' 'y-gt-test.txt' 'y-pred-train.txt' 'y-gt-train.txt' 'losses-h1.txt' 'visual-output' 'test-h1n1.png' 'train-h1n1.png'
 ```
+
+## Data
+
+### Amino acid sequences of influenza HA protein
+To train the sequence processing model for each type of influenza, we retrieve more than 80,000 amino acid sequences of HA protein from H3 influenza from GISAID.
+
+### Representative viruses for training ResNet
+To train MLP for regression, we collect 279 representative H3 viruses with both HI measurements and full-length HA sequences
+
+### HA sequence-based embedding distance
+Please download HA sequence-based embedding distance between each pair of representative viruses from https://drive.google.com/drive/folders/1vQhz0SYSHiWYtGX0lGxcBH-btTNGB8rm?usp=sharing
+
+### Antigenic distance 
+Please find the antigenic distance between each pair of representative H3 viruses in this [folder](data/distance/)
+
+## Pretrained models
+
+### Sequence processing model built with BiLSTM
+Please find pre-trained BiLSTM in this [folder](/models/trained_sequence_models) for each influenza type.
+
+### ResNet-18
+Please find our trained ResNet-18 for each influenza subtype/lineage in this [folder](/models/trained_regression_models) 
+
 
 ### Schematic of the model components for predicting antigenic change of H3N2 virus in each season.
 
