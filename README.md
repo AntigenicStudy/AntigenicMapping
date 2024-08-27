@@ -8,10 +8,10 @@ Our experiments were run with Python version 3.9 on Ubuntu 20.04.1.
 ## Installation guide
 pip is the recommended installer for this environment.  
 
-## Usage
+## Demo
 ### Train BiLSTM
 ```
-python code/trainBiLSTM.py 
+python code/flu-fasta.py 
 ```
 ### Embedding HA protein
 ```
