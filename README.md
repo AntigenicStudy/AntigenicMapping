@@ -51,8 +51,8 @@ Please find the antigenic distance between each pair of representative H3 viruse
 ### Sequence processing model built with BiLSTM
 Please find pre-trained BiLSTM in this [folder](/models/trained_sequence_models) for each influenza type.
 
-### ResNet-18
-Please find our trained ResNet-18 for each influenza subtype/lineage in this [folder](/models/trained_regression_models) 
+### MLP regressor
+Please find our trained MLP regressor for H3 influenza in this [folder](/models/trained_regression_models) 
 
 
 ### Schematic of the model components for predicting antigenic change of H3N2 virus in each season.
