@@ -1,21 +1,22 @@
 # Antigenic Variation Prediction
-We develop a two-stage deep learning based framework to predict the antigenic distance between pairwise influenza viruses using their hemagglutinin (HA) protein sequences. In the first stage, for each type of influenza virus, we encode HA sequences in a high-dimensional continuous space by training a sequence processing model using BiLSTM with large-volume HA sequences retrieved from GISAID, the global influenza data initiative. In the second stage, for each influenza subtype/lineage, we train a ResNet to predict the antigenic distance between pairwise viruses using their HA sequence-based embedding distance.
+We develop a two-stage deep learning based framework to predict the antigenic distance between pairwise influenza viruses using their hemagglutinin (HA) protein sequences. In the first stage, for each type of influenza virus, we encode HA sequences in a high-dimensional continuous space by training a sequence processing model using BiLSTM with large-volume HA sequences retrieved from GISAID, the global influenza data initiative. In the second stage, we train a four-layer MLP to predict the antigenic distance between pairwise viruses using their HA sequence-based embedding distance.
 
 ## Data
 
 ### Amino acid sequences of influenza HA protein
-To train the sequence processing model for each type of influenza, we retrieve large-volume amino acid sequences of HA protein from that type of influenza from GISAID.
+To train the sequence processing model for each type of influenza, we retrieve more than 80,000 amino acid sequences of HA protein from H3 influenza from GISAID.
 
 ### Representative viruses for training ResNet
-To train ResNet-18 for each influenza subtype/lineage, we collect representative viruses of the same subtype/lineage with both HI measurements and full-length HA sequences
+To train MLP for regression, we collect 279 representative H3 viruses with both HI measurements and full-length HA sequences
 
 ### HA sequence-based embedding distance
 Please download HA sequence-based embedding distance between each pair of representative viruses from https://drive.google.com/drive/folders/1vQhz0SYSHiWYtGX0lGxcBH-btTNGB8rm?usp=sharing
 
 ### Antigenic distance 
-Please find the antigenic distance between each pair of representative viruses for each influenza subtype/lineage in this [folder](data/distance/)
+Please find the antigenic distance between each pair of representative H3 viruses in this [folder](data/distance/)
 
 ## Environment
+
 
 ## Pretrained models
 
