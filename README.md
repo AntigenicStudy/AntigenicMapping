@@ -5,6 +5,9 @@ We develop a two-stage deep learning based framework to predict the antigenic di
 The major Python package requirements and their tested versions are in [file](requirements.txt)  
 Our experiments were run with Python version 3.9 on Ubuntu 20.04.1.
 
+## Installation guide
+pip is the recommended installer for this environment.  
+
 ## Data
 
 ### Amino acid sequences of influenza HA protein
