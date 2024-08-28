@@ -1,14 +1,17 @@
 # Using pathogen genomics to predict antigenic changes of influenza H3N2 virus
 This repository contains the framework code, data files, links to large data, and trained models for the paper "Using pathogen genomics to predict antigenic changes of influenza H3N2 virus" by Lin Wang, Sidan Yao et al.(2024).
 
-## System requirements
+### System requirements
 The major Python package requirements and their tested versions are in [requirements.txt](requirements.txt)    
 Our experiments were run with Python version 3.9 on Ubuntu 20.04.1.
 
-## Installation guide
+### Installation guide
 [pip](https://packaging.python.org/en/latest/key_projects/#pip) is the recommended installer for this environment.  
 
-## Demo
+### Demo
+
+The main results in our paper can be found in the [results/](results) directory and can be reproduced using the commands below.  
+Trained models are in the [models/](models) directory, they are used for our analyses.  
 
 ### Embedding HA protein
 To calculate the embedding of a protein, please run this script given the example sequence, input fasta file and the trained BiLSTM model.
