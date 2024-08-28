@@ -2,7 +2,7 @@
 We develop a two-stage deep learning based framework to predict the antigenic distance between pairwise influenza viruses using their hemagglutinin (HA) protein sequences. In the first stage, for each type of influenza virus, we encode HA sequences in a high-dimensional continuous space by training a sequence processing model using BiLSTM with large-volume HA sequences retrieved from GISAID, the global influenza data initiative. In the second stage, we train a four-layer MLP to predict the antigenic distance between pairwise viruses using their HA sequence-based embedding distance.
 
 ## System requirements
-The major Python package requirements and their tested versions are in [file](requirements.txt)  
+The major Python package requirements and their tested versions are in [requirement.txt](requirements.txt)  
 Our experiments were run with Python version 3.9 on Ubuntu 20.04.1.
 
 ## Installation guide
