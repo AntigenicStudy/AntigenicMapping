@@ -6,7 +6,7 @@ The major Python package requirements and their tested versions are in [requirem
 Our experiments were run with Python version 3.9 on Ubuntu 20.04.1.
 
 ## Installation guide
-pip is the recommended installer for this environment.  
+[pip](https://packaging.python.org/en/latest/key_projects/#pip) is the recommended installer for this environment.  
 
 ## Demo
 
