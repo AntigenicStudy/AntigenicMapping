@@ -29,18 +29,21 @@ To calculate the embedding vectors of an HA protein, please run this command wit
 python code/flu-fasta.py examples/example_flu.fa aligned/h3-train.fa --checkpoint models/flu-h3.hdf5
 ```
 
-**Calculate embedding distance**
+**Calculate embedding distance**  
+
 This step returns the embedding distance between a pair of proteins.
 ```
 python code/embeddingDistance.py 'data/matrix' 'embed_dis/h1-pairwise.txt'
 ```
 
-**Translate embedding distance into antigenic distance** 
+**Mapping embedding distance into antigenic distance**  
+
 ```
 python code/regression.py 'data/distance' 'h1-dis.txt' 'data/embedding' 'h1_pairwise.txt' 'pred-output' 'losses-h1.txt' 'h1.mdl' 'y-pred-test.txt' 'y-gt-test.txt' 'y-pred-train.txt' 'y-gt-train.txt'
 ```
 
-### Visualize results
+**Visualize results**  
+
 ```
 python code/visualization.py 'pred-output' 'y-pred-test.txt' 'y-gt-test.txt' 'y-pred-train.txt' 'y-gt-train.txt' 'losses-h1.txt' 'visual-output' 'test-h1n1.png' 'train-h1n1.png'
 ```
