@@ -1,4 +1,4 @@
-# Antigenic Variation Prediction
+# Using pathogen genomics to predict antigenic changes of influenza H3N2 virus
 We develop a two-stage deep learning based framework to predict the antigenic distance between pairwise influenza viruses using their hemagglutinin (HA) protein sequences. In the first stage, for each type of influenza virus, we encode HA sequences in a high-dimensional continuous space by training a sequence processing model using BiLSTM with large-volume HA sequences retrieved from GISAID, the global influenza data initiative. In the second stage, we train a four-layer MLP to predict the antigenic distance between pairwise viruses using their HA sequence-based embedding distance.
 
 ## System requirements
