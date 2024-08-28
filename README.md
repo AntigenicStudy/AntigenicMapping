@@ -13,7 +13,7 @@ Our experiments were run with Python version 3.9 on Ubuntu 20.04.1.
 The main results in our paper can be found in the [results/](results) directory and can be reproduced using the commands below.  
 Trained models are in the [models/](models) directory, they are used for our analyses.  
 
-**Embedding HA protein**
+**Embedding HA protein**  
 To calculate the embedding of a protein, please run this script given the example sequence, input fasta file and the trained BiLSTM model.
 ```
 python code/flu-fasta.py examples/example_flu.fa aligned/h3-train.fa --checkpoint models/flu-h3.hdf5
