@@ -1,5 +1,5 @@
-# Using pathogen genomics to predict antigenic changes of influenza H3N2 virus
-This repository contains the framework code, data files, links to large data, and trained models for the paper "Using pathogen genomics to predict antigenic changes of influenza H3N2 virus" by Lin Wang, Sidan Yao et al.(2024).
+# Antigenic Variation Prediction
+We develop a two-stage deep learning based framework to predict the antigenic distance between pairwise influenza viruses using their hemaqglutinin (HA) protein sequences. In the first stage, for each type of influenza virus, we encode HA sequences in a high-dimensional continuous space by training a sequence processing model using BilSTiM with large-volume HA sequences retrieved from GISAID, the global influenza data initiative. In the second stage, for each influenza subtype/lineage, we train an MLP to predict the antigenic distance between pairwise viruses using their HA sequence-based embedding distance.
 
 ### System requirements
 The major Python package requirements and their tested versions are in [requirements.txt](requirements.txt)    
