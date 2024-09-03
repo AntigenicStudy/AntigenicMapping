@@ -1,6 +1,4 @@
 """
-Project: Influenza Antigenic Prediction
-
 This project utilizes the language model implementation from the viral-mutation repository by Brian Hie.
 Repository: https://github.com/brianhie/viral-mutation
 Credit to the original authors for their contributions.
