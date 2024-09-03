@@ -1,6 +1,6 @@
 """Embedding the amino acids(AA) sequences into high dimensional vectors using the trained BiLSTM.
 
-Details in [viral-mutation](https://github.com/brianhie/viral-mutation)
+Details in https://github.com/brianhie/viral-mutation
 
   Typical usage example:
 
