@@ -1,13 +1,13 @@
-"""Embedding the amino acids(AA) sequences into high dimensional vectors using the trained BiLSTM.
+# This project utilizes the language model implementation from the 
+# viral-mutation repository by Brian Hie.
+# Repository: https://github.com/brianhie/viral-mutation
+# Credit to the original authors for their contributions.
 
-  This project incorporates the language model implementation from the viral-mutation repository by Brian Hie.  
-  We extend our thanks to the original authors for their contribution.
+'''
+Typical usage example:
 
-  Typical usage example:
-
-  python code/flu-fasta.py examples/example_flu.fa aligned/h3-train.fa --checkpoint models/flu-h3.hdf5
-"""
-
+python code/flu-fasta.py examples/example_flu.fa aligned/h3-train.fa --checkpoint models/flu-h3.hdf5
+'''
 
 from mutation import *
 import time
