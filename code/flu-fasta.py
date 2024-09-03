@@ -1,4 +1,12 @@
-#embedding the protein sequences into high dimensional vectors using the trained BiLSTM.
+"""Embedding the amino acids(AA) sequences into high dimensional vectors using the trained BiLSTM.
+
+Details in [viral-mutation](https://github.com/brianhie/viral-mutation)
+
+  Typical usage example:
+
+  python code/flu-fasta.py examples/example_flu.fa aligned/h3-train.fa --checkpoint models/flu-h3.hdf5
+"""
+
 
 from mutation import *
 import time
