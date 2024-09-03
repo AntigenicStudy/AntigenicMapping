@@ -1,6 +1,7 @@
 """Embedding the amino acids(AA) sequences into high dimensional vectors using the trained BiLSTM.
 
-  This project incorporates the language model implementation from the viral-mutation repository by Brian Hie. We extend our thanks to the original authors for their contribution.
+  This project incorporates the language model implementation from the viral-mutation repository by Brian Hie.  
+  We extend our thanks to the original authors for their contribution.
 
   Typical usage example:
 
