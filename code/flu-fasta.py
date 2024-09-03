@@ -1,6 +1,4 @@
 """
-Project: Influenza Antigenic Prediction
-
 Typical Usage:
     python code/flu-fasta.py examples/example_flu.fa aligned/h3-train.fa --checkpoint models/flu-h3.hdf5
 
