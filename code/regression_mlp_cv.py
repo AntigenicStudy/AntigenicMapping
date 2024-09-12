@@ -97,6 +97,8 @@ def train(net, train_features, train_labels, test_features, test_labels,
             
     return train_ls, test_ls
 
+
+
 def train_and_pred(train_features, test_features, train_labels, test_data,
                 num_epochs, lr, weight_decay, batch_size, cuda_id, kfold_str,neuron_1, neuron_2, neuron_3, device, opt_nm, gt,model_path,image_path):
     net = MLPNet(neuron_1, neuron_2, neuron_3, neuron_4).to(device)
@@ -117,6 +119,116 @@ def train_and_pred(train_features, test_features, train_labels, test_data,
             
     print(f'train log rmse: {float(train_ls[-1]):f}')
     print('training time is ' + str(end - start))
+
+
+
+
+
+def main():
+
+    device = torch.device('cuda:' + cuda_id)
+    
+    ''' Import and show X and Y values '''
+    dis = np.loadtxt('antigenicDis/fold_' + kfold_str_outer + '/' + 'h3-dis-train-' + '-' + kfold_str_inner + '.csv', delimiter=',')
+
+    dis_show = dis.flatten()[:]
+    gt = np.array(dis_show)[:]
+    
+    print("size of gt is " + str(gt.shape))
+    print('Shape of Y is ' + str(dis_show.shape))
+    print('Maximum of Y is ' + str(np.max(dis_show)) + '. Minimum of Y is ' + str(np.min(dis_show))) 
+
+    data_set_input = np.genfromtxt('semanticDis/10_fold_' + kfold_str_outer + '/h3-semanticDis-train-' + kfold_str_inner + '.csv', delimiter=',', usecols=np.arange(0,565)) #[:,0:560]#np.loadtxt('matrix/h3_pairs-nowcast-b.csv', delimiter=',')
+    print(data_set_input.shape)
+    
+    virus_count = int(math.sqrt(data_set_input.shape[0]))
+
+    print('check nan')
+    print(np.any(np.isnan(data_set_input)))
+    print(np.argwhere(np.isnan(data_set_input)))
+    
+    #delete duplicate elements in the matrix
+    rows = []
+    idx = np.arange(virus_count * virus_count)
+    for i in range(2):
+        for j in range(virus_count):
+            for k in idx[j * virus_count : j * virus_count + j + 1]:
+                rows.append(k)
+            
+    data_set_input = np.delete(data_set_input, rows, axis=0)
+    antiDis_max = np.max(dis_show)
+    data_set_input = data_set_input * antiDis_max
+    data_set_output = np.array(dis_show)[:]
+    data_set_output = np.delete(data_set_output, rows, axis=0)
+    
+    print('Shape of X is '+str(data_set_input.shape) + ' Shape of Y is ' + str(data_set_output.shape))
+    
+    indices = np.random.permutation(data_set_input.shape[0])
+    training_idx, test_idx = indices[:int(1 * len(indices))], indices[int(1 * len(indices)):]
+
+    x = []
+    y = []
+    for i in range(len(training_idx)):
+        x.append(data_set_input[training_idx[i]])
+        y.append(data_set_output[training_idx[i]])
+
+    train_features = np.array(x)
+    train_lables = np.array(y)
+    train_lables = train_lables[:,np.newaxis]
+    train_features = torch.tensor(train_features, dtype=torch.float32).to(device)
+    train_lables = torch.tensor(train_lables,dtype=torch.float32).to(device)
+    
+    print('Shape of train X is '+str(train_features.shape) + ' Shape of train Y is ' + str(train_lables.shape))
+    print('Maximum of train Y is ' + str(torch.max(train_lables)) + '. Minimum of train Y is ' + str(torch.min(train_lables))) 
+    
+    dis = np.loadtxt('antigenicDis/fold_' + kfold_str_outer + '/' + 'h3-dis-test-' + '-' + kfold_str_inner + '.csv', delimiter=',')
+    dis_show = dis.flatten()[:]
+    gt = np.array(dis_show)[:]
+    
+    print('Shape of Y is ' + str(dis_show.shape))
+    print('Maximum of Y is ' + str(np.max(dis_show)) + '. Minimum of Y is ' + str(np.min(dis_show))) 
+    data_set_input_test = np.genfromtxt('semanticDis/10_fold_' + kfold_str_outer + '/h3-semanticDis-test-' + kfold_str_inner + '.csv', delimiter=',', usecols=np.arange(0,565)) #[:,0:560]#np.loadtxt('matrix/h3_pairs-nowcast-b.csv', delimiter=',')
+    print(data_set_input_test.shape)
+    
+    virus_count = int(math.sqrt(data_set_input_test.shape[0]))
+    print('check nan')
+    print(np.any(np.isnan(data_set_input_test)))
+    print(np.argwhere(np.isnan(data_set_input_test)))
+    rows = []
+    idx = np.arange(virus_count * virus_count)
+    for i in range(2):
+        for j in range(virus_count):
+            for k in idx[j * virus_count : j * virus_count + j + 1]:
+                rows.append(k)
+            
+    data_set_input_test = np.delete(data_set_input_test, rows, axis=0)
+    data_set_input_test = data_set_input_test * antiDis_max
+    data_set_output_test = np.array(dis_show)[:]
+    data_set_output_test = np.delete(data_set_output_test, rows, axis=0)
+    gt = np.delete(gt, rows, axis=0)
+    print('Shape of X is '+str(data_set_input_test.shape) + ' Shape of Y is ' + str(data_set_output_test.shape))
+    
+    x = []
+    y = []
+    for i in range(len(data_set_output_test)):
+        x.append(data_set_input_test[i])
+        y.append(data_set_output_test[i])
+
+    test_features = np.array(x)
+    test_lables = np.array(y)
+    test_lables = test_lables[:,np.newaxis]
+    test_features = torch.tensor(test_features, dtype=torch.float32).to(device)
+    test_lables = torch.tensor(test_lables,dtype=torch.float32).to(device)
+    
+    print('Shape of test X is '+str(test_features.shape) + ' Shape of test Y is ' + str(test_lables.shape))
+    print('Maximum of test Y is ' + str(torch.max(test_lables)) + '. Minimum of test Y is ' + str(torch.min(test_lables))) 
+    
+    num_epochs, weight_decay, batch_size = num_epochs, wt_dc, batch_sz
+    train_and_pred(train_features, test_features, train_lables, test_lables,
+               num_epochs, lr, weight_decay, batch_size, cuda_id, kfold_str_inner, neuron_1, neuron_2, neuron_3, device, opt_nm, gt, model_path, image_path) 
+
+
+
 
 
 if __name__ == '__main__':
