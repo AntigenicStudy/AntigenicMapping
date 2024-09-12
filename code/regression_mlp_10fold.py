@@ -120,27 +120,28 @@ def train_and_pred(train_features, test_features, train_labels, test_data,
 
 
 if __name__ == '__main__':
+    
     cuda_id = '0'
 
     lowest_rmse = 1e8
-    num_epochs = 700
-    kfold_str_list = ['2','3','4','5','6','7','8','9']
-    kfold_str_list_outer = ['2']
-    kfold_str_list_inner = ['0','1','2','3','4','5','6','7','8','9']
+    num_epochs = 1000
     kfold_str_outer = '0'
     kfold_str_inner = '0'
+    kfold_str_list_outer = ['0']
+    kfold_str_list_inner = ['0','1','2','3','4','5','6','7','8','9']
     
-    lr = 9e-5
-    batch_sz = 256
+    lr = 0
     lr_list = [2e-4,3e-4]
+    
+    batch_sz = 0
     batch_sz_list = [32,64,128,256,512,1024]
-    wd_list = [0,1e-6,1e-5,1e-3,0.01]
     
     wt_dc = 0
+    wd_list = [0,0.01,0.001,0.0001,0.00001,0.000001]
     
-    neuron_1 = 4096
-    neuron_2 = 2048
-    neuron_3 = 1024
+    neuron_1 = 2048
+    neuron_2 = 1024
+    neuron_3 = 512
     neuron_4 = 48
     
     path = ''
@@ -155,7 +156,7 @@ if __name__ == '__main__':
                 wt_dc = wd
                 for fold_outer in kfold_str_list_outer:
                     kfold_str_outer = fold_outer
-                    path = '4layer-lowestepoch/' + kfold_str_outer + '/' + str(neuron_1) + '-' + str(neuron_2) + '_' + str(neuron_3) + '_' + str(neuron_4) + '_' + opt_nm + '_' + str(lr) + '_' + str(batch_sz)  + '_' +  str(wt_dc)  
+                    path = '4layer-outcome/' + kfold_str_outer + '/' + str(neuron_1) + '-' + str(neuron_2) + '_' + str(neuron_3) + '_' + str(neuron_4) + '_' + str(lr) + '_' + str(batch_sz)  + '_' +  str(wt_dc)  
                     os.makedirs(path)
                     os.makedirs(path + '/models')
                     os.makedirs(path + '/images')
@@ -165,5 +166,4 @@ if __name__ == '__main__':
                         kfold_str_inner = fold_inner 
                         model_path = path + '/models/'
                         image_path = path + '/images/' 
-                        main()  
-
+                        main() 
